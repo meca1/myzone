@@ -24,9 +24,8 @@ export class RegisterPage implements OnInit {
       console.log("passwords don't mach") 
     }
     try {
-      const res = await this.afAuth.auth.createUserWithEmailAndPassword(username + 'codedamn.com', password)
-      console.log();
-      
+      const res = await this.afAuth.auth.createUserWithEmailAndPassword(username, password)
+      console.log(res); 
     } catch (error) {
       console.dir(error)
     }
