@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'
 import { auth } from 'firebase/app';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,10 @@ export class LoginPage implements OnInit {
   username: string = ""
   password: string = ""
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(
+    public afAuth: AngularFireAuth,
+    public route: Router,
+  ) { }
 
   ngOnInit() {
   }
@@ -20,7 +25,9 @@ export class LoginPage implements OnInit {
    async login() {
     const { username, password } = this
     try{
-      const res = await this.afAuth.auth.signInAndRetrieveDataWithEmailAndPassword(username + '@codedamn.com', password)
+      const res = await this.afAuth.auth.signInAndRetrieveDataWithEmailAndPassword(username, password) 
+      console.log(res);
+      this.route.navigate(['/home'])
     }catch(err){
       console.dir(err)
       if(err.code ==="auth/operation-not-allowed") {
