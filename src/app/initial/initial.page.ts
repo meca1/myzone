@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { createAotCompiler } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-initial',
@@ -10,9 +11,12 @@ export class InitialPage implements OnInit {
   item ="../assets/icon/cara.png"
   slideOpts = {
     effect: 'flip'}
-  constructor() { }
+  constructor(public route: Router) { }
 
   ngOnInit() {
   }
-
+  login(){
+  this.route.navigate(['/login'])
+  }
 }
+
