@@ -13,7 +13,7 @@ export class HomePage {
   ){}
   pushUserNavCtrl(){
     //this.navCtrl.navigateForward(`/user/${ this.valor }`);
-    this.navCtrl.navigateForward(`/information`);
+    this.navCtrl.navigateForward(`/mapa`);
 
   }
 }

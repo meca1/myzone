@@ -4,17 +4,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <!--<agm-map [latitude]="lat" [longitude]="lng">
+<ion-content padding>
+  <!--<agm-map [latitude]="lat" [longitude]="lng">
         <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
       </agm-map>
-    -->  
-      <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]='15'>
-          <agm-marker *ngFor="let marcador of marcadores" [latitude]="marcador.lat" [longitude]="marcador.lng">
-              <agm-info-window>
-                <strong>{{marcador.title}}</strong>
-                <p>{{marcador.description}}</p>
-              </agm-info-window>
-          </agm-marker>
-        </agm-map>
+    -->
+  <div>
+    <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]='15'>
+      <agm-marker *ngFor="let marcador of marcadores" [latitude]="marcador.lat" [longitude]="marcador.lng">
+        <agm-info-window>
+          <strong>{{marcador.title}}</strong>
+          <p>{{marcador.description}}</p>
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
+  </div>
+  <div>   
+    <ion-chip>
+      <ion-label color="secondary">Secondary Label</ion-label>
+    </ion-chip>
+  </div>
+
 </ion-content>

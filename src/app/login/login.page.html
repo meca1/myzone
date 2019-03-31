@@ -1,10 +1,13 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="padding">
   <ion-grid>
     <ion-row justify-content-center>
       <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -25,6 +28,9 @@
           <ion-button size="large" expand="block" (click)="login()">Login</ion-button>
         </div>
       </ion-col>
+      <div class="loginR">
+        <p>¿No tienes una cuenta? <a (click)="goToSignup()"> Registrate</a></p>
+      </div>
     </ion-row>
   </ion-grid>
 </ion-content>

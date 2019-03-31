@@ -21,7 +21,9 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
-
+  goToSignup(){
+    this.route.navigate(['/register'])
+  }
    async login() {
     const { username, password } = this
     try{
