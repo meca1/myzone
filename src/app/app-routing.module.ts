@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
 
   { path: 'initial', loadChildren: './initial/initial.module#InitialPageModule' },
-  { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },
+  { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },  { path: 'inventario', loadChildren: './inventario/inventario.module#InventarioPageModule' },
+
 
 ];
 

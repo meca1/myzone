@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Marcador } from '../class/marcador';
+import { NavController } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -17,6 +19,7 @@ export class MapaPage  {
   constructor() {
     const nuevoMarcador = new Marcador (51.678418, -7.809007)
     this.marcadores.push(nuevoMarcador);
+    
   }
 
   agregarMarcador(evento){
@@ -28,3 +31,8 @@ export class MapaPage  {
 
 }
 }
+
+
+
+
+
