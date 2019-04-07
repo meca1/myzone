@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Marcador } from '../class/marcador';
 import { NavController } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +16,9 @@ export class MapaPage  {
   lat: number = 51.678418;
   lng: number = 7.809007;
 
-  constructor() {
+  constructor(
+    public route: Router,
+    ) {
     const nuevoMarcador = new Marcador (51.678418, -7.809007)
     this.marcadores.push(nuevoMarcador);
     
@@ -29,6 +31,9 @@ export class MapaPage  {
     const nuevoMarcador = new Marcador(evento.coords.lat, evento.coords.lng);
     this.marcadores.push(nuevoMarcador);
 
+}
+goToSignup(){
+  this.route.navigate(['/inventario'])
 }
 }
 
