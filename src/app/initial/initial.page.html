@@ -1,61 +1,36 @@
-<ion-header>
-    <ion-toolbar>
+<!-- <ion-header> -->
+    <!-- <ion-toolbar>
 
       <ion-title>Bienvenido</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 <ion-content>
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide>
-     
-      <ion-card>
-          <ion-card-header>
-            <ion-card-title>Localiza</ion-card-title>
-          </ion-card-header>
-          <ion-img src="../assets/icon/globo.png"></ion-img>
-          <ion-card-content>
-              Keep close to Nature's heart... and break clear away, once in awhile,
-              and climb a mountain or spend a week in the woods. Wash your spirit clean.
-            </ion-card-content>
-        </ion-card>
-
-    </ion-slide> 
-    <ion-slide>
-      
-      <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            <ion-card-title>Card Title</ion-card-title>
-          </ion-card-header>
-          <ion-img src="../assets/icon/mapa.png"></ion-img>
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </ion-card-content>
-        </ion-card>
-
-    </ion-slide>
-    <ion-slide>
-     
-      <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle></ion-card-subtitle>
-            <ion-card-title>Card Title</ion-card-title>
-          </ion-card-header>
-          <ion-img   src="../assets/icon/lista.png"></ion-img> 
-          <ion-card-content>
-              Keep close to Nature's heart... and break clear away, once in awhile,
-              and climb a mountain or spend a week in the woods. Wash your spirit clean.
-            </ion-card-content>
-        </ion-card>
-    </ion-slide>
+    <ion-slides class="padding" pager="true">
+        <ion-slide class="step-one">
+            <ion-img src="/assets/icons/ubicame.png"></ion-img>
+            <h1>Heading</h1>
+            <p>Parqués es un juego de mesa colombiano derivado del Parchís español</p>
+        </ion-slide>
     
-  </ion-slides>
+        <ion-slide class="step-two">
+            <ion-img src="/assets/icons/ubicame.png"></ion-img>
+            <h1>Heading</h1>
+            <p>Parqués es un juego de mesa colombiano derivado del Parchís español</p>
+        </ion-slide>
+    
+        <ion-slide class="step-three">
+            <ion-img src="/assets/icons/ubicame.png"></ion-img>
+            <h1>Heading</h1>
+            <p>Parqués es un juego de mesa colombiano derivado del Parchís español</p>
+    
+            <ion-button (click)="login()">Login</ion-button>
+        </ion-slide>
+    </ion-slides>
  
-  
+<!--   
       <ion-toolbar>
           <ion-button expand="full" (click)="login()">Login</ion-button>
-      </ion-toolbar>
+      </ion-toolbar> -->
    
   
 </ion-content>

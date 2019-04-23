@@ -12,12 +12,14 @@ import  firebaseConfig  from './firebase';
 import { environment } from 'src/environments/environment.prod';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+    IonicStorageModule.forRoot(),
     BrowserModule,
      IonicModule.forRoot(),
       AppRoutingModule,
