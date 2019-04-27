@@ -14,11 +14,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { ApolloModule, APOLLO_OPTIONS } from "apollo-angular";
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+    ApolloModule,
     IonicStorageModule.forRoot(),
     BrowserModule,
      IonicModule.forRoot(),
@@ -29,7 +31,11 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { 
+      // provide: APOLLO_OPTIONS,
+      provide: RouteReuseStrategy,
+      useClass: IonicRouteStrategy 
+    }
   ],
   bootstrap: [AppComponent]
 })
