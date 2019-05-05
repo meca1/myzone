@@ -1,26 +1,37 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/initial"></ion-back-button>
+    </ion-buttons>
     <ion-title>Mapa</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="padding">
   <!--<agm-map [latitude]="lat" [longitude]="lng">
         <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
       </agm-map>
     -->
-  <div>
-    <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]='15'>
-      <agm-marker *ngFor="let marcador of marcadores" [latitude]="marcador.lat" [longitude]="marcador.lng">
-        <agm-info-window>
-          <strong>{{marcador.title}}</strong>
-          <p>{{marcador.description}}</p>
-        </agm-info-window>
-      </agm-marker>
-    </agm-map>
-  </div>
-  <div >   
-   <ion-button expand="block" class="b" (click)="goToSignup()" >Inventario</ion-button>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]='15'>
+          <agm-marker *ngFor="let marcador of marcadores" [latitude]="marcador.lat" [longitude]="marcador.lng">
+            <agm-info-window>
+              <strong>{{marcador.title}}</strong>
+              <p>{{marcador.description}}</p>
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
+      </div>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+    </ion-card-content>
+  </ion-card>
+  <div class="button-store">
+    <ion-button expand="full" (click)="goToSignup()">Inventario</ion-button>
   </div>
 
 </ion-content>

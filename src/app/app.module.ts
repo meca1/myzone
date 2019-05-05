@@ -13,20 +13,30 @@ import { environment } from 'src/environments/environment.prod';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule } from '@angular/common/http';
 
-import { ApolloModule, APOLLO_OPTIONS } from "apollo-angular";
+//Apollo things
+
+import { Apollo } from 'apollo-angular';
+import { ApolloModule } from 'apollo-angular';
+import {HttpLinkModule, HttpLink} from 'apollo-angular-link-http';
+import {InMemoryCache} from 'apollo-cache-inmemory';
+
+const uri ="http://localhost:60000/simple/v1/cjv2p2l8000040186vxhvjc2r"
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    ApolloModule,
     IonicStorageModule.forRoot(),
     BrowserModule,
-     IonicModule.forRoot(),
-      AppRoutingModule,
-      AngularFireModule.initializeApp(firebaseConfig),
-      AngularFireAuthModule
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    ApolloModule,
+    HttpLinkModule,
+    HttpClientModule,
     ],
   providers: [
     StatusBar,
@@ -39,4 +49,14 @@ import { ApolloModule, APOLLO_OPTIONS } from "apollo-angular";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(
+    apollo: Apollo,
+    httpLink: HttpLink
+  ) { 
+    apollo.create({
+      link: httpLink.create({ uri }), 
+      cache: new InMemoryCache()
+    }); 
+  }
+}

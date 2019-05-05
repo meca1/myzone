@@ -30,16 +30,15 @@ export class HomePage implements OnInit {
       .watchQuery({
         query: gql`
           {
-            allUsers(orderBy:name_DESC){
+            allUsers{
               id
               name
-              dateOfBirth
             }
           }
         `,
       })
       .valueChanges.subscribe((result : ApolloQueryResult<any>) => {
-        this.rates = result.data && result.data.rates;
+        this.rates = result.data && result.data.allUsers;
         this.loading = result.loading;
         this.error = result.errors;
       });

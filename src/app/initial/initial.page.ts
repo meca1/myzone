@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { createAotCompiler } from '@angular/compiler';
 import { Router } from '@angular/router';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+import { ApolloQueryResult } from 'apollo-client';
 
 @Component({
   selector: 'app-initial',
@@ -8,15 +11,50 @@ import { Router } from '@angular/router';
   styleUrls: ['./initial.page.scss'],
 })
 export class InitialPage implements OnInit {
-  item ="../assets/icon/cara.png"
-  slideOpts = {
-    effect: 'flip'}
-  constructor(public route: Router) { }
 
+  rates: any[];
+  loading = true;
+  error: any;
+  item ="../assets/icon/cara.png"
+  slideOpts = {effect: 'flip'}
+
+  constructor(public route: Router, private apollo: Apollo) { }
+
+  
   ngOnInit() {
+    this.apollo
+      .watchQuery({
+
+        // THIS IS THE QUERY...
+        query: gql`
+          query traerTodosLosUsuarios
+          {
+            allUsers{
+              id
+              name
+            }
+          }
+        `,
+      })
+      // WHEN THE VALUE CHANGES, WE GET A STREAM FROM THE SUBSCRIPTION
+      .valueChanges.subscribe((result : ApolloQueryResult<any> ) => {
+        console.log(result.data.allUsers);
+        
+        // THE RATES THAT ARE RETURNED ARE NOW AVAILABLE
+        // FOR DISPLAY IN THE UI
+        this.rates = result.data && result.data.allUsers;
+        
+        // LOADING STATUS
+        
+        this.loading = result.loading;
+               
+        // ERRORS
+        this.error = result.errors;
+      });
   }
   login(){
   this.route.navigate(['/login'])
   }
 }
+
 

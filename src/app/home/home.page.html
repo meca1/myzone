@@ -8,55 +8,8 @@
 
 <ion-content class="padding">
   <ion-searchbar animated></ion-searchbar>
-  <div class="ion-padding">
-    <ion-card>
-      <ion-item>
-        <ion-card-title>Card Title</ion-card-title>
-      </ion-item>
-      <ion-item>
-        <ion-img src="../assets/parque.jpg"></ion-img>
-      </ion-item>
-      <ion-button expand="full" fill="outline" (click)="pushUserNavCtrl()">View</ion-button>
 
-      <ion-card-content>
-        This is content, without any paragraph or header tags,
-        within an ion-card-content element.
-      </ion-card-content>
-    </ion-card>
-  </div>
-  <div class="ion-padding">
-    <ion-card>
-      <ion-item>
-        <ion-card-title>Card Title</ion-card-title>
-      </ion-item>
-      <ion-item>
-        <ion-img src="../assets/parque.jpg"></ion-img>
-      </ion-item>
-      <ion-button expand="full" fill="outline" (click)="pushUserNavCtrl()">View</ion-button>
 
-      <ion-card-content>
-        This is content, without any paragraph or header tags,
-        within an ion-card-content element.
-      </ion-card-content>
-    </ion-card>
-  </div>
-  <div class="ion-padding">
-    <ion-card>
-      <ion-item>
-        <ion-card-title>Card Title</ion-card-title>
-      </ion-item>
-      <ion-item>
-        <ion-img src="../assets/parque.jpg"></ion-img>
-      </ion-item>
-      <ion-button expand="full" fill="outline" (click)="pushUserNavCtrl()">View</ion-button>
-
-      <ion-card-content>
-        This is content, without any paragraph or header tags,
-        within an ion-card-content element.
-      </ion-card-content>
-    </ion-card>
-  </div>
-  
   <div *ngIf="loading">
     Loading...
   </div>
@@ -65,7 +18,24 @@
   </div>
   <div *ngIf="rates">
     <div *ngFor="let rate of rates">
-      <p>{{rate.currency}}: {{rate.rate}}</p>
+
+      <div class="ion-padding">
+        <ion-card>
+          <ion-item>
+            <ion-card-title>{{rate.name}}</ion-card-title>
+          </ion-item>
+          <ion-item>
+            <ion-img src="../assets/parque.jpg"></ion-img>
+          </ion-item>
+          <ion-button expand="full" fill="outline" (click)="pushUserNavCtrl()">View</ion-button>
+
+          <ion-card-content>
+            {{rate.id}}
+            This is content, without any paragraph or header tags,
+            within an ion-card-content element.
+          </ion-card-content>
+        </ion-card>
+      </div>
     </div>
   </div>
 

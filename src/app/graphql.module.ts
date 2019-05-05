@@ -3,7 +3,7 @@ import {ApolloModule, APOLLO_OPTIONS} from 'apollo-angular';
 import {HttpLinkModule, HttpLink} from 'apollo-angular-link-http';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 
-const uri = 'http://localhost:60000/simple/v1/cjuy7wq32000401865yefzk4p'; // <-- add the URL of the GraphQL server here
+const uri = 'http://localhost:60000/simple/v1/cjv2p2l8000040186vxhvjc2r'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink) {
   return {
     link: httpLink.create({uri}),
