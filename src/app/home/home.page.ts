@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import {Apollo} from 'apollo-angular';
+import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { ApolloQueryResult } from 'apollo-client';
 
@@ -19,32 +19,35 @@ export class HomePage implements OnInit {
   constructor(
     private apollo: Apollo,
     private navCtrl: NavController
-    ) {}
-    pushUserNavCtrl(){
-          // this.navCtrl.navigateForward(`/user/${ this.valor }`);
-          this.navCtrl.navigateForward(`/mapa`);
-        }
+  ) { }
+  pushUserNavCtrl() {
+    // this.navCtrl.navigateForward(`/user/${ this.valor }`);
+    this.navCtrl.navigateForward(`/mapa`);
+  }
 
   ngOnInit() {
     this.apollo
       .watchQuery({
         query: gql`
           {
-            allUsers{
-              id
+            allParks {
               name
+              id
+              latitud
+              longitud 
+              pais
             }
           }
         `,
       })
-      .valueChanges.subscribe((result : ApolloQueryResult<any>) => {
-        this.rates = result.data && result.data.allUsers;
+      .valueChanges.subscribe((result: ApolloQueryResult<any>) => {
+        this.rates = result.data && result.data.allParks;
         this.loading = result.loading;
         this.error = result.errors;
       });
   }
 }
-  
+
 //   constructor(
 //     private navCtrl: NavController
 //   ){}

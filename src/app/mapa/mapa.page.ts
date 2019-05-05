@@ -15,7 +15,7 @@ export class MapaPage  {
   title: string = 'Localización';
   lat: number = 51.678418;
   lng: number = 7.809007;
-
+  parkName: string = '';
   constructor(
     public route: Router,
     ) {
