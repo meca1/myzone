@@ -1,4 +1,13 @@
 # myzone
+npm install -g graphcool
+
+npm install
+
+ng add apollo-angular
+
+const uri = 'https://o5x5jzoo7z.sse.codesandbox.io/graphql'; //our test Graphql Server which returns rates
+
+
 
 npm install
 npm i graphcool -g 
