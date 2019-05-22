@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
-            <ion-back-button defaultHref="/mapa"></ion-back-button>
+            <ion-back-button defaultHref="/home"></ion-back-button>
         </ion-buttons>
         <ion-title>Inventario</ion-title>
     </ion-toolbar>
@@ -11,32 +11,32 @@
     <ion-item>
         <ion-icon name="md-eye" slot="start"></ion-icon>
         <ion-label>Sillas</ion-label>
-        <ion-badge slot="end" (click)="goToSignup()">10</ion-badge>
+        <ion-badge slot="end">10</ion-badge>
     </ion-item>
     <ion-item>
         <ion-icon name="md-eye" slot="start"></ion-icon>
         <ion-label>Farolas</ion-label>
-        <ion-badge slot="end" (click)="goToSignup1()">20</ion-badge>
+        <ion-badge slot="end">20</ion-badge>
     </ion-item>
     <ion-item>
         <ion-icon name="md-eye" slot="start"></ion-icon>
         <ion-label>Arboles</ion-label>
-        <ion-badge slot="end" (click)="goToSignup2()">20</ion-badge>
+        <ion-badge slot="end">20</ion-badge>
     </ion-item>
     <ion-item>
         <ion-icon name="md-eye" slot="start"></ion-icon>
         <ion-label>Arcos Baloncesto</ion-label>
-        <ion-badge slot="end" (click)="goToSignup3()">2</ion-badge>
+        <ion-badge slot="end">2</ion-badge>
     </ion-item>
     <ion-item>
         <ion-icon name="md-eye" slot="start"></ion-icon>
         <ion-label>Arcos Microfutbol</ion-label>
-        <ion-badge slot="end" (click)="goToSignup3()">2</ion-badge>
+        <ion-badge slot="end">2</ion-badge>
     </ion-item>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button>
-            <ion-icon name="add"></ion-icon>
+            <ion-icon (click)="goToSignup()" name="add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 

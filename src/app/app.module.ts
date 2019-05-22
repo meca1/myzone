@@ -22,7 +22,7 @@ import { ApolloModule } from 'apollo-angular';
 import {HttpLinkModule, HttpLink} from 'apollo-angular-link-http';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 
-const uri ="http://localhost:60000/simple/v1/cjv2p2l8000040186vxhvjc2r"
+const uri ="https://api.graph.cool/simple/v1/cjv14rb014vcb0108wgqy0zmq"
 
 @NgModule({
   declarations: [AppComponent],

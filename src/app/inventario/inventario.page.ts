@@ -33,12 +33,12 @@ export class InventarioPage implements OnInit {
   }
   async showAlert() {
     const alert = await this.alert.create({
-      header: 'Checkbox',
+      header: 'Item',
       inputs: [
         {
           name: 'checkbox1',
           type: 'checkbox',
-          label: 'Checkbox 1',
+          label: 'silla',
           value: 'value1',
           checked: true
         },
@@ -46,28 +46,28 @@ export class InventarioPage implements OnInit {
         {
           name: 'checkbox2',
           type: 'checkbox',
-          label: 'Checkbox 2',
+          label: 'farola',
           value: 'value2'
         },
 
         {
           name: 'checkbox3',
           type: 'checkbox',
-          label: 'Checkbox 3',
+          label: 'arboles',
           value: 'value3'
         },
 
         {
           name: 'checkbox4',
           type: 'checkbox',
-          label: 'Checkbox 4',
+          label: 'arcos de baloncesto',
           value: 'value4'
         },
 
         {
           name: 'checkbox5',
           type: 'checkbox',
-          label: 'Checkbox 5',
+          label: 'arcos de futbol',
           value: 'value5'
         },
 
@@ -89,7 +89,7 @@ export class InventarioPage implements OnInit {
         }, {
           text: 'Ok',
           handler: () => {
-            console.log('Confirm Ok');
+            console.log('profe no sea si pasenos vea que tenemos que hacer la otra app y no tenemos mucho tiempo');
           }
         }
       ]
