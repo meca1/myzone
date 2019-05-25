@@ -18,3 +18,9 @@ npm install --save apollo-angular \
   apollo-cache-inmemory \
   graphql-tag \
   graphql
+
+### resources
+links
+https://www.npmjs.com/package/graphql
+https://www.graph.cool/
+https://www.apollographql.com/docs/angular/basics/setup
