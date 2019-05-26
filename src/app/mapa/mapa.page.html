@@ -8,18 +8,18 @@
 </ion-header>
 
 <ion-content class="padding">
-  <!--<agm-map [latitude]="lat" [longitude]="lng">
-        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-      </agm-map>
-    -->
+  <!-- <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map> -->
+
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{name}}</ion-card-title>
-      {{id}}
+      <ion-card-title>Parque {{name}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <div>
-        <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]='15'>
+        <!-- [zoom]='15' -->
+        <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng">
           <agm-marker *ngFor="let marcador of marcadores" [latitude]="marcador.lat" [longitude]="marcador.lng">
             <agm-info-window>
               <strong>{{marcador.title}}</strong>

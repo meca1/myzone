@@ -14,23 +14,27 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./mapa.page.scss'],
 })
 export class MapaPage  {
+  id = this.ruta.snapshot.paramMap.get('id');
+  name = this.ruta.snapshot.paramMap.get('name');
+  longitud = this.ruta.snapshot.paramMap.get('longitud');
   rates: any[];
   loading = true;
   error: any;
   dato:string="";
   marcadores : Marcador[] = [];
   title: string = 'Localización';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
-  id = this.ruta.snapshot.paramMap.get('id');
-  name = this.ruta.snapshot.paramMap.get('name');
+  lat: number = parseFloat(this.id);
+  lng: number = parseFloat(this.longitud);
+  
+  
+ 
   constructor(
     public route: Router,
     private apollo: Apollo,
     private navCtrl: NavController,
-    private ruta: ActivatedRoute,
+    private ruta: ActivatedRoute,s
     ) {
-    const nuevoMarcador = new Marcador (51.678418, -7.809007)
+    const nuevoMarcador = new Marcador (this.lat, this. lng)
     this.marcadores.push(nuevoMarcador);
     
   }
@@ -59,8 +63,9 @@ export class MapaPage  {
       this.loading = result.loading;
       this.error = result.errors;
     });
+    
 }
-  
+
 
 
   agregarMarcador(evento){
@@ -76,7 +81,12 @@ export class MapaPage  {
 goToSignup(){
   this.route.navigate(['/inventario'])
 }
+
 }
+
+
+
+
 
 
 
